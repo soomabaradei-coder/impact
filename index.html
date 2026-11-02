@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Somayah Albaradei</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=Public+Sans:wght@300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F7F4;
+  --mist:#E8EEE9;
+  --ink:#182420;
+  --pine:#20594E;
+  --pine-deep:#143B33;
+  --gold:#A87F2F;
+  --line:#C9D4CC;
+  --muted:#53645D;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Public Sans',system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--pine);text-decoration-color:rgba(32,89,78,.35);text-underline-offset:3px}
+a:hover{color:var(--pine-deep)}
+:focus-visible{outline:2px solid var(--pine);outline-offset:3px;border-radius:2px}
+.wrap{max-width:860px;margin:0 auto;padding:0 28px}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(245,247,244,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:baseline;justify-content:space-between;padding:14px 28px;max-width:860px;margin:0 auto}
+.nav-name{font-family:'Newsreader',serif;font-size:1.15rem;font-weight:600;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:22px;flex-wrap:wrap}
+.nav-links a{font-size:.88rem;color:var(--muted);text-decoration:none}
+.nav-links a:hover{color:var(--pine-deep)}
+@media(max-width:680px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+header{padding:90px 0 70px}
+.hero-kicker{font-size:.95rem;color:var(--muted);margin-bottom:18px}
+h1{
+  font-family:'Newsreader',serif;
+  font-weight:500;
+  font-size:clamp(2.5rem,6vw,4rem);
+  line-height:1.06;
+  letter-spacing:-.015em;
+}
+.hero-role{font-family:'Newsreader',serif;font-style:italic;font-size:clamp(1.1rem,2.2vw,1.35rem);color:var(--pine-deep);margin-top:18px}
+.hero-sub{margin-top:10px;color:var(--muted);font-size:1rem;max-width:56ch}
+.hero-lede{margin-top:34px;max-width:58ch;font-size:1.12rem}
+.roles{margin-top:40px;display:grid;gap:20px}
+.role{border-left:3px solid var(--gold);padding-left:20px}
+.role b{font-family:'Newsreader',serif;font-weight:600;font-size:1.18rem;display:block;color:var(--pine-deep)}
+.role span{display:block;color:var(--muted);font-size:.95rem;max-width:56ch;margin-top:3px}
+.hero-top{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.save-btn{display:inline-flex;align-items:center;padding:8px 18px;border:1px solid var(--line);border-radius:99px;background:transparent;color:var(--pine);cursor:pointer;font:inherit;font-size:.85rem;white-space:nowrap}
+.save-btn:hover{border-color:var(--pine)}
+.hero-three{margin-top:30px;display:grid;gap:8px}
+.hero-three a{
+  font-family:'Newsreader',serif;font-size:1.25rem;text-decoration:none;
+  color:var(--pine-deep);display:inline-flex;align-items:baseline;gap:14px;width:fit-content;
+}
+.hero-three a:hover{color:var(--gold)}
+.hero-three .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex-shrink:0;transform:translateY(-2px)}
+
+/* ---------- pillar sections ---------- */
+section{padding:76px 0;border-top:1px solid var(--line)}
+section.tint{background:var(--mist)}
+.pillar-eyebrow{font-family:'Newsreader',serif;font-style:italic;color:var(--gold);font-size:1.05rem;margin-bottom:6px}
+h2{
+  font-family:'Newsreader',serif;font-weight:500;
+  font-size:clamp(1.8rem,3.6vw,2.5rem);letter-spacing:-.01em;
+  margin-bottom:26px;max-width:22ch;
+}
+section p{max-width:62ch}
+section p+p{margin-top:16px}
+.worklist{margin-top:34px;display:grid;gap:16px;max-width:62ch}
+.workitem{border-left:3px solid var(--pine);padding-left:20px}
+.workitem b{font-weight:600;display:block}
+.workitem span{color:var(--muted);font-size:.95rem}
+
+/* publications */
+.pub-note{color:var(--muted);font-size:.95rem;margin-top:40px;max-width:62ch}
+details.all-pubs{margin-top:16px;max-width:66ch}
+details.all-pubs summary{
+  cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:10px;
+  font-weight:600;color:var(--pine);padding:9px 18px;border:1px solid var(--pine);border-radius:99px;font-size:.92rem;
+}
+details.all-pubs summary::-webkit-details-marker{display:none}
+details.all-pubs summary::after{content:"+";font-size:1.05rem}
+details.all-pubs[open] summary::after{content:"–"}
+details.all-pubs .pub-list{margin-top:22px}
+.pub-sm{padding:11px 0;border-bottom:1px solid var(--line);font-size:.92rem;max-width:none}
+.pub-sm i{font-family:'Newsreader',serif;color:var(--pine-deep)}
+.pub-group{font-family:'Newsreader',serif;font-size:1.2rem;font-weight:600;margin:26px 0 4px}
+
+/* projects */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:36px}
+.proj{background:var(--paper);padding:22px 24px 26px}
+.proj .tag{font-family:'Newsreader',serif;font-style:italic;color:var(--gold);font-size:.92rem}
+.proj h3{font-family:'Newsreader',serif;font-weight:600;font-size:1.15rem;margin:4px 0 6px}
+.proj h3 a{text-decoration:none;color:var(--pine-deep)}
+.proj h3 a:hover{color:var(--gold)}
+.proj p{font-size:.93rem;color:var(--muted);max-width:none}
+.proj .repo{margin-top:10px;font-size:.85rem}
+@media(max-width:680px){.proj-grid{grid-template-columns:1fr}}
+
+/* background strip */
+.bg-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:30px}
+.bg-strip b{font-family:'Newsreader',serif;font-weight:600;font-size:1.1rem;display:block}
+.bg-strip span{color:var(--muted);font-size:.92rem}
+@media(max-width:680px){.bg-strip{grid-template-columns:1fr}}
+
+/* contact */
+footer{background:var(--pine-deep);color:#E9F0ED;padding:76px 0 56px}
+footer h2{color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:10px}
+.contact-list{display:grid;gap:14px;font-size:1rem}
+.contact-list a{color:#D9C68F;text-decoration-color:rgba(217,198,143,.4)}
+.contact-list a:hover{color:#fff}
+.contact-label{font-size:.82rem;color:#9DB8AF;display:block}
+footer .closing{font-family:'Newsreader',serif;font-style:italic;font-size:1.25rem;max-width:30ch;line-height:1.55;color:#E9F0ED}
+.footnote{margin-top:52px;font-size:.8rem;color:#7FA095}
+@media(max-width:680px){.contact-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">S. Albaradei</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top" class="wrap">
+  <p class="hero-kicker">King Abdulaziz University, Jeddah, Saudi Arabia</p>
+  <div class="hero-top">
+    <h1>Somayah Albaradei</h1>
+    <button id="save-contact" class="save-btn hero-save" type="button">Save my contact</button>
+  </div>
+  <p class="hero-lede">I am an AI expert. I harness artificial intelligence to make an impact: in health, in the pilgrim's journey, and in people and organizations ready to grow.</p>
+  <div class="roles">
+    <div class="role"><b>Advisor to the Vice President for Educational Affairs</b><span>Leader of the KITE initiative, empowering the university's students, women and men, to reach global opportunities.</span></div>
+    <div class="role"><b>AI Advisor, Center of Excellence in Artificial Intelligence</b><span>Empowering companies and individuals to make their own impact.</span></div>
+    <div class="role"><b>Associate Professor of Artificial Intelligence</b><span>Named best faculty member at the university level.</span></div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>Artificial intelligence is my craft: deep learning, explainable AI, and intelligent agents. What I care about is what it changes. A model matters to me when a disease is caught earlier, a pilgrim's journey gets easier, a student wins an opportunity, or a company learns to stand on its own.</p>
+    <p>That is the thread through my work. In health, my models read the body's signals so disease can be found early, and explain their reasoning to the clinicians who act on them. For Hajj and Umrah, which is personal to me as a daughter of Mecca, I directed the Training and Awareness Track of the Nusuk Card initiative and filed a patent for an AI kiosk serving pilgrims. And across education and business, I lead KITE to carry King Abdulaziz University's students toward global opportunities, chair the Rhodes Scholarship Preparation Initiative, grow young talent with Mawhiba, and advise organizations and individuals building real AI capability.</p>
+    <p>People outlast papers. The impact I care about keeps walking after I stop.</p>
+  </div>
+</section>
+
+<section id="projects" class="tint">
+  <div class="wrap">
+    <h2>Projects &amp; prototypes</h2>
+    <p>Ideas become real when they leave the slide deck. These live in the open, on GitHub.</p>
+    <div class="proj-grid">
+      <div class="proj">
+        <p class="tag">Health</p>
+        <h3><a href="https://github.com/soomabaradei-coder/NORA" rel="noopener">NORA</a></h3>
+        <p>Nanopore Oncology Reasoning Agent: validating biomarker evidence in cell-free RNA liquid biopsies for early cancer detection.</p>
+        <p class="repo"><a href="https://github.com/soomabaradei-coder/NORA" rel="noopener">Code</a> / <a href="https://github.com/soomabaradei-coder/NORA-Main" rel="noopener">Web prototype</a></p>
+      </div>
+      <div class="proj">
+        <p class="tag">Hajj &amp; Umrah</p>
+        <h3><a href="https://github.com/soomabaradei-coder/KNF" rel="noopener">Kanaf</a></h3>
+        <p>An early prototype of an AI companion that accompanies pilgrims through their journey.</p>
+        <p class="repo"><a href="https://github.com/soomabaradei-coder/KNF" rel="noopener">Prototype on GitHub</a></p>
+      </div>
+      <div class="proj">
+        <p class="tag">Empowerment</p>
+        <h3><a href="https://github.com/soomabaradei-coder/COMPASS" rel="noopener">COMPASS</a></h3>
+        <p>A web platform for building and tracking academic advising plans.</p>
+        <p class="repo"><a href="https://github.com/soomabaradei-coder/COMPASS" rel="noopener">Code on GitHub</a></p>
+      </div>
+      <div class="proj">
+        <p class="tag">Empowerment</p>
+        <h3><a href="https://github.com/soomabaradei-coder/Smart_Kite" rel="noopener">Smart KITE</a></h3>
+        <p>Architecture, roadmap, and film for the KITE student excellence initiative at King Abdulaziz University.</p>
+        <p class="repo"><a href="https://github.com/soomabaradei-coder/Smart_Kite" rel="noopener">On GitHub</a></p>
+      </div>
+      <div class="proj">
+        <p class="tag">Impact</p>
+        <h3><a href="https://github.com/soomabaradei-coder/Tahawwal" rel="noopener">Tahawwal</a></h3>
+        <p>An interactive cultural game that introduces children to the heritage of the Aseer region.</p>
+        <p class="repo"><a href="https://github.com/soomabaradei-coder/Tahawwal" rel="noopener">Code on GitHub</a></p>
+      </div>
+      <div class="proj">
+        <p class="tag">Health</p>
+        <h3><a href="https://github.com/soomabaradei-coder/prevention-tree" rel="noopener">Prevention Tree</a></h3>
+        <p>An interactive Arabic-language awareness prototype.</p>
+        <p class="repo"><a href="https://github.com/soomabaradei-coder/prevention-tree" rel="noopener">Prototype on GitHub</a></p>
+      </div>
+      <div class="proj">
+        <p class="tag">Empowerment</p>
+        <h3><a href="https://github.com/soomabaradei-coder/interview-practice" rel="noopener">Interview Practice</a></h3>
+        <p>A simple tool for practicing job interviews and building confidence before the real one.</p>
+        <p class="repo"><a href="https://github.com/soomabaradei-coder/interview-practice" rel="noopener">On GitHub</a></p>
+      </div>
+      <div class="proj">
+        <p class="tag">Exploration</p>
+        <h3><a href="https://github.com/soomabaradei-coder/koravibe" rel="noopener">KoraVibe</a></h3>
+        <p>An AI concept exploring football and the stadium experience.</p>
+        <p class="repo"><a href="https://github.com/soomabaradei-coder/koravibe" rel="noopener">On GitHub</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2 style="font-size:1.6rem">Publications</h2>
+    <p class="pub-note">More than twenty peer-reviewed journal articles, conference papers, and book chapters.</p>
+    <details class="all-pubs">
+      <summary>Publication list</summary>
+      <div class="pub-list">
+        <p class="pub-group">Journal articles</p>
+        <p class="pub-sm">Hajjar, M., Aldabbagh, G., and Albaradei, S. (2025). Interpretable multi-cancer early detection using SHAP-based machine learning on tumor-educated platelet RNA. <i>Diagnostics</i>, 15(17), 2216.</p>
+        <p class="pub-sm">Albaradei, S. (2025). AI-driven approaches to utilization of multi-omics data for personalized diagnosis and treatment of cancer: A comprehensive review. <i>Computer Modeling in Engineering and Sciences</i>, 145(3), 2937-2970.</p>
+        <p class="pub-sm">Hajjar, M., Albaradei, S., and Aldabbagh, G. (2024). Machine learning approaches in multi-cancer early detection. <i>Information</i>, 15(10), 627.</p>
+        <p class="pub-sm">Albaradei, S., Alganmi, N., Albaradie, A., Alharbi, E., Motwalli, O., Thafar, M. A., and Essack, M. (2023). A deep learning model predicts the presence of diverse cancer types using circulating tumor cells. <i>Scientific Reports</i>, 13(1), 21114.</p>
+        <p class="pub-sm">Thafar, M. A., Albaradei, S., Uludag, M., Alshahrani, M., Gojobori, T., Essack, M., and Gao, X. (2023). OncoRTT: Predicting novel oncology-related therapeutic targets using BERT embeddings and omics features. <i>Frontiers in Genetics</i>, 14.</p>
+        <p class="pub-sm">Alamro, H., Thafar, M. A., Albaradei, S., Gojobori, T., Essack, M., and Gao, X. (2023). Exploiting machine learning models to identify novel Alzheimer's disease biomarkers and potential targets. <i>Scientific Reports</i>, 13.</p>
+        <p class="pub-sm">Albaradei, S., Albaradei, A., Alsaedi, A., Uludag, M., Thafar, M. A., Gojobori, T., Essack, M., and Gao, X. (2022). MetastaSite: Predicting metastasis to different sites using deep learning with gene expression data. <i>Frontiers in Molecular Biosciences</i>, 9, 913602.</p>
+        <p class="pub-sm">Thafar, M. A., Alshahrani, M., Albaradei, S., Gojobori, T., Essack, M., and Gao, X. (2022). Affinity2Vec: Drug-target binding affinity prediction through representation learning, graph mining, and machine learning. <i>Scientific Reports</i>, 12.</p>
+        <p class="pub-sm">Zhang, X., Yang, Q., Albaradei, S., et al. (2021). Rise and fall of the global conversation and shifting sentiments during the COVID-19 pandemic. <i>Humanities and Social Sciences Communications</i>, 8.</p>
+        <p class="pub-sm">Albaradei, S., Uludag, M., Thafar, M. A., Gojobori, T., Essack, M., and Gao, X. (2021). Predicting bone metastasis using gene expression-based machine learning models. <i>Frontiers in Genetics</i>, 12.</p>
+        <p class="pub-sm">Albaradei, S., Napolitano, F., Thafar, M. A., Gojobori, T., Essack, M., and Gao, X. (2021). MetaCancer: A deep learning-based pan-cancer metastasis prediction model using multi-omics data. <i>Computational and Structural Biotechnology Journal</i>, 19, 4404-4411.</p>
+        <p class="pub-sm">Albaradei, S., Thafar, M. A., Alsaedi, A., Van Neste, C., Gojobori, T., Essack, M., and Gao, X. (2021). Machine learning and deep learning methods that use omics data for metastasis prediction. <i>Computational and Structural Biotechnology Journal</i>, 19, 5008-5018.</p>
+        <p class="pub-sm">Thafar, M. A., Olayan, R. S., Albaradei, S., Bajic, V. B., Gojobori, T., Essack, M., and Gao, X. (2021). DTI2Vec: Drug-target interaction prediction using network embedding and ensemble learning. <i>Journal of Cheminformatics</i>, 13.</p>
+        <p class="pub-sm">Albaradei, S., Magana-Mora, A., Thafar, M. A., Uludag, M., Bajic, V. B., Gojobori, T., Essack, M., and Gao, X. (2020). Splice2Deep: An ensemble of deep convolutional neural networks for improved splice site prediction in genomic DNA. <i>Gene</i>, 763, 100035.</p>
+        <p class="pub-sm">Thafar, M. A., Olayan, R. S., Ashoor, H., Albaradei, S., Bajic, V. B., Gao, X., and Essack, M. (2020). DTiGEMS+: Drug-target interaction prediction using graph embedding, graph mining, and similarity-based techniques. <i>Journal of Cheminformatics</i>, 12.</p>
+        <p class="pub-sm">Albaradei, S., Napolitano, F., Uludag, M., Thafar, M. A., Napolitano, S., Essack, M., Bajic, V. B., and Gao, X. (2020). Automated counting of colony forming units using deep transfer learning. <i>IEEE Access</i>, 8, 164340-164346.</p>
+        <p class="pub-sm">Albalawi, F., Chahid, A., Guo, X., Albaradei, S., et al. (2019). Hybrid model for efficient prediction of poly(A) signals in human genomic DNA. <i>Methods</i>, 166, 31-39.</p>
+        <p class="pub-sm">Thafar, M. A., Bin Raies, A., Albaradei, S., Essack, M., and Bajic, V. B. (2019). Comparison study of computational prediction tools for drug-target binding affinities. <i>Frontiers in Chemistry</i>, 7.</p>
+        <p class="pub-group">Conference papers &amp; presentations</p>
+        <p class="pub-sm">Albaradei, S. (2026). NORA: A Nanopore Oncology Reasoning Agent for Evidence Validation in Cell-Free RNA Liquid Biopsy. Oral presentation at <i>Genome Science 2026</i>, University of Manchester, Manchester, UK.</p>
+        <p class="pub-sm">Albaradei, S., Thafar, M. A., Van Neste, C., Essack, M., and Bajic, V. B. (2019). Metastatic state of colorectal cancer can be accurately predicted with methylome. <i>Proceedings of the 6th International Conference on Bioinformatics Research and Applications (ICBRA)</i>, pp. 125-130.</p>
+        <p class="pub-sm">Albaradei, S., Wang, Y., Cao, L., and Li, L.-J. (2014). Learning mid-level features from object hierarchy for image classification. <i>Proceedings of the IEEE Winter Conference on Applications of Computer Vision (WACV)</i>, pp. 235-240.</p>
+        <p class="pub-group">Book chapters</p>
+        <p class="pub-sm">Ali, A. M., Khan, S., Albaradei, S., and Abid, M. (2026, in progress). Artificial Intelligence and Nanoinformatics in Neurological Drug Design.</p>
+        <p class="pub-sm">Alharbi, E., Albaradei, S., Essack, M., Jones, J. M., and Alomainy, A. (2025). Wearable devices developed to support dementia detection, monitoring, and intervention. <i>Next Generation eHealth</i> (Academic Press), pp. 223-250.</p>
+        <p class="pub-sm">Albaradei, S., and Wang, Y. (2014). Object classification using a semantic hierarchy. <i>Lecture Notes in Computer Science</i> (Springer), 8887, 228-237.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <h2 style="font-size:1.6rem">Background</h2>
+    <div class="bg-strip">
+      <div><b>Ph.D., Computer Science</b><span>AI &amp; Bioinformatics, KAUST, 2022</span></div>
+      <div><b>M.Sc., Computer Science</b><span>Computer Vision, University of Manitoba, Canada, 2016</span></div>
+      <div><b>B.Sc., Computer Science</b><span>Umm Al-Qura University, Saudi Arabia, 2009</span></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <p class="closing">If your work touches health, the pilgrim's journey, or growing people, I would be glad to hear from you.</p>
+      <div class="contact-list">
+        <div><span class="contact-label">Email</span><a href="mailto:salbaradei@kau.edu.sa">salbaradei@kau.edu.sa</a></div>
+        <div><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/somayah-albaradei-8b4526123/" rel="noopener">Somayah Albaradei</a></div>
+        <div><span class="contact-label">X</span><a href="https://x.com/SomayahAlbaradei" rel="noopener">@SomayahAlbaradei</a></div>
+        <div><span class="contact-label">ORCID</span><a href="https://orcid.org/0000-0003-4317-2358" rel="noopener">0000-0003-4317-2358</a></div>
+      </div>
+    </div>
+    <p class="footnote">© 2026 Dr. Somayah Albaradei · King Abdulaziz University, Jeddah, Saudi Arabia</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var V=[
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "N:Albaradei;Somayah;Abdullah;Dr.;",
+    "FN:Dr. Somayah Abdullah Albaradei",
+    "TITLE:Advisor to the Vice President for Educational Affairs",
+    "ORG:King Abdulaziz University",
+    "EMAIL;TYPE=WORK:salbaradei@kau.edu.sa",
+    "TEL;TYPE=CELL:+966555237037",
+    "URL:https://www.linkedin.com/in/somayah-albaradei-8b4526123/",
+    "ADR;TYPE=WORK:;;;Jeddah;;;Saudi Arabia",
+    "END:VCARD"
+  ].join("\r\n");
+  var PLAIN="Dr. Somayah Abdullah Albaradei\nAdvisor to the Vice President for Educational Affairs, King Abdulaziz University\nEmail: salbaradei@kau.edu.sa\nPhone: +966 55 523 7037\nLinkedIn: https://www.linkedin.com/in/somayah-albaradei-8b4526123/";
+  var btn=document.getElementById("save-contact");
+  if(!btn)return;
+  var hasClaude=!!(window.claude&&typeof window.claude.use==="function");
+  var downloads=null;
+  if(hasClaude){
+    window.claude.use("downloads").then(function(d){downloads=d;}).catch(function(){});
+  }
+  btn.addEventListener("click",function(){
+    if(downloads){
+      downloads.save({filename:"Somayah-Albaradei.vcf",data:V}).then(function(){
+        btn.textContent="Saved. Open the file to add me";
+      }).catch(function(){});
+    }else if(!hasClaude){
+      try{
+        var blob=new Blob([V],{type:"text/vcard"});
+        var u=URL.createObjectURL(blob);
+        var a=document.createElement("a");
+        a.href=u;a.download="Somayah-Albaradei.vcf";
+        document.body.appendChild(a);a.click();a.remove();
+        setTimeout(function(){URL.revokeObjectURL(u);},2000);
+        btn.textContent="Saved. Open the file to add me";
+      }catch(e){copyPlain();}
+    }else{
+      copyPlain();
+    }
+  });
+  function copyPlain(){
+    try{
+      navigator.clipboard.writeText(PLAIN).then(function(){
+        btn.textContent="Details copied";
+      }).catch(function(){});
+    }catch(e){}
+  }
+})();
+</script>
+</body>
+</html>
